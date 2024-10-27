@@ -16,7 +16,7 @@ function App() {
 
   function handleClick() {
     setIsLoading(true);
-    fetch('http://localhost:3000', {
+    fetch('https://scraper-api-five.vercel.app', {
       method: 'POST',
       body: JSON.stringify({
         keyword: search,
