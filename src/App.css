@@ -28,7 +28,7 @@ body {
   max-width: 1200px;
   width: 100%;
   padding: 10px;
-  row-gap: 100px;
+  row-gap: 40px;
 }
 
 .search {
@@ -37,8 +37,18 @@ body {
 }
 
 .list {
+  display: flex;
+  flex-direction: column;
   color: rgb(187, 202, 214);
   font-size: 1.2rem;
+}
+
+.load {
+  display: flex;
+  justify-content: center;
+  color: rgb(187, 202, 214);
+  font-size: 1.2rem;
+  height: 25px;
 }
 
 .btn {

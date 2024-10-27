@@ -8,13 +8,15 @@ import './App.css';
 function App() {
   const [results, setResults] = useState(null);
   const [search, setSearch] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   function handleChange(e) {
     setSearch(e.target.value);
   }
 
   function handleClick() {
-    fetch('https://scraper-api-five.vercel.app', {
+    setIsLoading(true);
+    fetch('http://localhost:3000', {
       method: 'POST',
       body: JSON.stringify({
         keyword: search,
@@ -26,25 +28,25 @@ function App() {
       .then(response => response.json())
       .then(data => {
         setResults(data);
+        setIsLoading(false);
       });
   }
 
   return (
     <div className="container">
       <div className="search">
-        <div className="wrapper">
-          <form method="post" action="/" onSubmit={e => e.preventDefault()}>
-            <Search
-              type="text"
-              name="search"
-              placeholder="Google search"
-              handleChange={handleChange}
-              value={search}
-              handleClick={handleClick}
-            />
-          </form>
-        </div>
+        <form method="post" action="/" onSubmit={e => e.preventDefault()}>
+          <Search
+            type="text"
+            name="search"
+            placeholder="Google search"
+            handleChange={handleChange}
+            value={search}
+            handleClick={handleClick}
+          />
+        </form>
       </div>
+      <div className="load">{isLoading && <p>Searching...</p>}</div>
       <div className="list">
         <ul>
           {results &&
@@ -69,3 +71,5 @@ function App() {
 }
 
 export default App;
+
+// fetch('https://scraper-api-five.vercel.app', {
