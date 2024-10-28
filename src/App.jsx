@@ -29,6 +29,9 @@ function App() {
       .then(data => {
         setResults(data);
         setIsLoading(false);
+      })
+      .catch(error => {
+        console.log(error);
       });
   }
 
