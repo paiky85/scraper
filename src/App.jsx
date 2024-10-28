@@ -16,7 +16,7 @@ function App() {
 
   function handleClick() {
     setIsLoading(true);
-    fetch('https://scraper-api-five.vercel.app', {
+    fetch('https://scraper-api-k4w9.onrender.com', {
       method: 'POST',
       body: JSON.stringify({
         keyword: search,
