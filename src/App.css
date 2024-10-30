@@ -2,7 +2,7 @@
 :root {
   /* --primary: #bc4123;
     --secondary: #1e3e62; */
-  --font: rgb(187, 202, 214);
+  --primary: rgb(187, 202, 214);
 }
 
 * {
@@ -41,13 +41,13 @@ body {
   margin-top: 20px;
   width: 100%;
   text-align: center;
-  color: var(--font);
+  color: var(--primary);
 }
 
 .list {
   display: flex;
   flex-direction: column;
-  color: var(--font);
+  color: var(--primary);
   font-size: 1.2rem;
   align-items: center;
 }
@@ -55,7 +55,7 @@ body {
 .load {
   display: flex;
   justify-content: center;
-  color: var(--font);
+  color: var(--primary);
   font-size: 1.2rem;
   height: 25px;
 }
@@ -89,7 +89,7 @@ button:hover {
 }
 
 .btn button {
-  background: var(--font);
+  background: var(--primary);
   border-radius: 8px;
   display: inline-block;
   height: 40px;
@@ -104,11 +104,11 @@ button:hover {
 }
 
 .wrapper input {
-  color: var(--font);
+  color: var(--primary);
   font-size: 1.1rem;
   font-weight: 500;
   background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgb(187, 202, 214);
+  border: 2px solid var(--primary);
   border-radius: 10px;
   padding: 1rem 2rem;
   width: 100%;
@@ -123,7 +123,7 @@ button:hover {
 }
 
 .wrapper button {
-  background: var(--font);
+  background: var(--primary);
   border-radius: 8px;
   aspect-ratio: 1;
   height: 80%;

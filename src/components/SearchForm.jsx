@@ -10,11 +10,13 @@ export default function Form() {
     useContext(SetStateContext);
   const [langSearch, setLangSearch] = useState('cs');
 
+  // more than 1 space between keyword ar not allowed
   function handleChange(e) {
     e.target.value = e.target.value.replace(/\s{2,}/g, ' ');
     setSearch(e.target.value);
   }
 
+  // space at start not allowed
   function handleKeyDown(e) {
     if (search === '' && e.keyCode === 32) e.preventDefault();
   }
