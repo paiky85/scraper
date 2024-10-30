@@ -2,6 +2,7 @@ import { saveAs } from 'file-saver';
 
 const SaveJSON = ({ data, fName }) => {
   const fileName = fName.split(' ').join('_');
+
   const handleSave = data => {
     const blob = new Blob([JSON.stringify(data)], {
       type: 'text/plain;charset=utf-8',

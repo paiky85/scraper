@@ -1,4 +1,9 @@
-export default function Search({ handleChange, value, handleClick }) {
+export default function Search({
+  handleChange,
+  value,
+  handleClick,
+  handleKeyDown,
+}) {
   return (
     <>
       <div className="wrapper">
@@ -7,9 +12,14 @@ export default function Search({ handleChange, value, handleClick }) {
           name="search"
           placeholder="Google search"
           onChange={handleChange}
+          onKeyDown={handleKeyDown}
           value={value}
         />
-        <button type="submit" onClick={handleClick}>
+        {/* <button type="submit" onClick={handleClick} disabled={value === ''}> */}
+        <button
+          type="submit"
+          onClick={e => (value === '' ? e.preventDefault() : handleClick())}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="28"

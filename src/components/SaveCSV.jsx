@@ -1,4 +1,5 @@
 import { saveAs } from 'file-saver';
+
 const SaveCSV = ({ data, fName }) => {
   const fileName = fName.split(' ').join('_');
 
@@ -11,10 +12,8 @@ const SaveCSV = ({ data, fName }) => {
     if (jsonData.length === 0) {
       return '';
     }
-
     // Create headers string
     const headers = columnHeaders.join(',') + '\n';
-
     // Map JSON data to CSV rows
     const rows = jsonData
       .map(row => {
@@ -22,7 +21,6 @@ const SaveCSV = ({ data, fName }) => {
         return columnHeaders.map(field => row[field] || '').join(',');
       })
       .join('\n');
-
     // Combine headers and rows
     return headers + rows;
   }
