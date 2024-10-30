@@ -21,6 +21,7 @@ const SaveCSV = ({ data, fName }) => {
         return columnHeaders.map(field => row[field] || '').join(',');
       })
       .join('\n');
+
     // Combine headers and rows
     return headers + rows;
   }

@@ -23,6 +23,7 @@ function App() {
         <div className="list">
           <ul>
             {results &&
+              Array.isArray(results) &&
               results.map(result => (
                 <li key={uuidv4()}>
                   <a href={result.link} target="_blank">
@@ -34,9 +35,14 @@ function App() {
                 </li>
               ))}
           </ul>
+          {results && <p>{results.message}</p>}
           <div className="btn">
-            {results && <SaveJSON data={results} fName={search} />}
-            {results && <SaveCSV data={results} fName={search} />}
+            {results && Array.isArray(results) && (
+              <SaveJSON data={results} fName={search} />
+            )}
+            {results && Array.isArray(results) && (
+              <SaveCSV data={results} fName={search} />
+            )}
           </div>
         </div>
       </div>
